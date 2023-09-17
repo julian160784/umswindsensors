@@ -1,0 +1,8 @@
+token = jWtKPm75ZOuYEIRiM8Yg2P2fqpGwteB26UHNt4QNM5FxlpaYyuebPM8EYtQIU97XMomdIW3cXchjhkpk
+
+
+http://mandalika-wind.com/api/sensorLog?api_token=jWtKPm75ZOuYEIRiM8Yg2P2fqpGwteB26UHNt4QNM5FxlpaYyuebPM8EYtQIU97XMomdIW3cXchjhkpk&data1=100&data3=30
+http POST http://mandalika-wind.com/api/sensorLog api_token=jWtKPm75ZOuYEIRiM8Yg2P2fqpGwteB26UHNt4QNM5FxlpaYyuebPM8EYtQIU97XMomdIW3cXchjhkpk data1=100 data3=30 --json
+
+- arah angin
+- log angin
