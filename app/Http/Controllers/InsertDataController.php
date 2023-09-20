@@ -33,7 +33,7 @@ class InsertDataController extends Controller
             foreach ($json as $key => $value) {
                 foreach ($sensorsetting as $s) {
                     if ($key == $s['parameter']) {
-                        $data[] = [
+                        $data = [
                             'ketinggian' => $s->height,
                             'parameter' => $key,
                             'nilai' => $value,
