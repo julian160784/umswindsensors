@@ -33,6 +33,7 @@ class InsertDataController extends Controller
                             'parameter' => $key,
                             'nilai' => $value,
                             'created_at' => $strTimeUTC,
+                            'updated_at' => $strTimeUTC
                         ];
 
                         SensorLog::insert($data);
