@@ -17,7 +17,12 @@ class InsertDataController extends Controller
         $timeUTC = explode(",", $timeUTC);
         $strTimeUTC = $timeUTC[0] . "-" . $timeUTC[1] . "-" . $timeUTC[2] . " " . $timeUTC[3] . ":" . $timeUTC[4] . ":" . $timeUTC[5];
         $sensorLog = SensorLog::orderBy('id', 'desc')->first();
-        $secondSensor = strtotime($sensorLog->created_at);
+        if (isset($sensorLog->created_at)){
+            $secondSensor = strtotime($sensorLog->created_at);
+        }
+        else {
+            $secondSensor = 0;
+        }
         $secondFile = strtotime($strTimeUTC);
 
         if ($secondFile > $secondSensor) {
