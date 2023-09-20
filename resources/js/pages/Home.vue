@@ -4,7 +4,7 @@
       <KecepatanAngin
         class="flex-fill mr-1 mb-1"
         :height="i"
-        v-for="i in [100, 70, 40, 10, 2]"
+        v-for="i in [80, 60, 30, 10]"
         :key="'kecepatan-angin'+i"
       />
     </div>
@@ -12,7 +12,7 @@
       <ArahAngin
         class="flex-fill mr-1 mb-1"
         :height="i"
-        v-for="i in [100, 70, 40, 10, 2]"
+        v-for="i in [80, 60, 30, 10]"
         :key="'arah-angin'+i"
       />
     </div>
@@ -21,7 +21,7 @@
       <LogAngin
         class="flex-fill mr-1 mb-1"
         :height="i"
-        v-for="i in [100, 70, 40, 10, 2]"
+        v-for="i in [80, 60, 30, 10]"
         :key="'log-angin'+i"
       />
     </div>
@@ -38,17 +38,20 @@
         class="mr-1 mb-1 flex-fill"
         :parameter="d"
       />
+    </div>
+    <div class="d-flex flex-wrap">
       <CurahHujan class="mr-1 mb-1 flex-fill" />
-      <Penguapan class="mr-1 mb-1 flex-fill" />
+      <!-- <Penguapan class="mr-1 mb-1 flex-fill" /> -->
       <TerbitTerbenam class="mr-1 mb-1 flex-fill" />
-      <Uv class="mr-1 mb-1 flex-fill" />
-      <RadiasiMatahari class="mr-1 mb-1 flex-fill" />
+      <!-- <Uv class="mr-1 mb-1 flex-fill" />
+      <RadiasiMatahari class="mr-1 mb-1 flex-fill" /> -->
       <HujanSaatIni class="mr-1 mb-1 flex-fill" />
-      <el-card class="text-center mr-1 mb-1 flex-fill" style="background-color:#DBD9D9">
+    </div>
+    
+    <el-card class="text-center mr-1 mb-1 flex-wrap" style="background-color:#DBD9D9">
         <h6>DIBANGUN OLEH:</h6>
         <img src="/images/logo-albani.png" alt />
       </el-card>
-    </div>
   </div>
 </template>
 

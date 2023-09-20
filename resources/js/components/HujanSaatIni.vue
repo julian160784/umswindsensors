@@ -17,7 +17,7 @@ export default {
   props: ["height"],
   data() {
     return {
-      unit: "inch",
+      unit: "mm",
       fetchInterval: null,
       chartOptions: {
         grid: {

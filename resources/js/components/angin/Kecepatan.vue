@@ -21,7 +21,7 @@ export default {
   props: ["height"],
   data() {
     return {
-      unit: "mph",
+      unit: "km/h",
       fetchInterval: null,
       chartOptions: {
         series: [

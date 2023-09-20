@@ -20,7 +20,7 @@ export default {
       data: [
         {
           r: [0, 0, 0, 0, 0, 0, 0, 0],
-          theta: ["U", "TM", "T", "TG", "S", "BD", "B", "BL"],
+          theta: ["U", "TL", "T", "TG", "S", "BD", "B", "BL"],
           name: "arah",
           type: "barpolar"
         }
