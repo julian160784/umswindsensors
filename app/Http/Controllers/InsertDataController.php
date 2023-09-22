@@ -17,13 +17,15 @@ class InsertDataController extends Controller
         $timeUTC = explode(",", $timeUTC);
         $strTimeUTC = $timeUTC[0] . "-" . $timeUTC[1] . "-" . $timeUTC[2] . " " . $timeUTC[3] . ":" . $timeUTC[4] . ":" . $timeUTC[5];
         $sensorLog = SensorLog::orderBy('id', 'desc')->first();
-        if (isset($sensorLog->created_at)){
+        if (isset($sensorLog->created_at)) {
             $secondSensor = strtotime($sensorLog->created_at);
-        }
-        else {
+        } else {
             $secondSensor = 0;
         }
         $secondFile = strtotime($strTimeUTC);
+
+        $existrg2 = Storage::exists('datasensor/realtimegauges2.txt');
+
 
         if ($secondFile > $secondSensor) {
 
@@ -46,6 +48,28 @@ class InsertDataController extends Controller
                 }
             }
 
+            if ($existrg2) {
+
+                $rg2 = Storage::get('datasensor/realtimegauges2.txy');
+
+                $json2 = json_decode(($rg2));
+
+                foreach ($json2 as $key => $value) {
+                    foreach ($sensorsetting as $s) {
+                        if ($key == $s['parameter']) {
+                            $data = [
+                                'ketinggian' => $s->height,
+                                'parameter' => $key,
+                                'nilai' => $value,
+                                'created_at' => $strTimeUTC,
+                                'updated_at' => $strTimeUTC
+                            ];
+
+                            SensorLog::insert($data);
+                        }
+                    }
+                }
+            }
         }
     }
 }
