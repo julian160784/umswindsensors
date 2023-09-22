@@ -42,8 +42,8 @@ class InsertDataController extends Controller
                             'ketinggian' => $s->height,
                             'parameter' => $key,
                             'nilai' => $value,
-                            'created_at' => Carbon::parse($strTimeUTC)->addHours(7),
-                            'updated_at' => Carbon::parse($strTimeUTC)->addHours(7)
+                            'created_at' => $strTimeWIB,
+                            'updated_at' =>$strTimeWIB
                         ];
 
                         SensorLog::insert($data);
@@ -53,7 +53,7 @@ class InsertDataController extends Controller
 
             if ($existrg2) {
 
-                $rg2 = Storage::get('datasensor/realtimegauges2.txy');
+                $rg2 = Storage::get('datasensor/realtimegauges2.txt');
 
                 $json2 = json_decode(($rg2));
 
@@ -64,8 +64,8 @@ class InsertDataController extends Controller
                                 'ketinggian' => $s->height,
                                 'parameter' => $key,
                                 'nilai' => $value,
-                                'created_at' => $strTimeUTC,
-                                'updated_at' => $strTimeUTC
+                                'created_at' =>$strTimeWIB,
+                                'updated_at' => $strTimeWIB
                             ];
 
                             SensorLog::insert($data);
