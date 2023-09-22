@@ -27,7 +27,7 @@ class InsertDataController extends Controller
         $strTimeWIB = Carbon::parse($strTimeUTC)->addHours(7);
         $secondFile = strtotime($strTimeWIB);
 
-        $existrg2 = Storage::exists('datasensor/realtimegauges2.txt');
+        //$existrg2 = Storage::exists('datasensor/realtimegauges2.txt');
 
 
         if ($secondFile > $secondSensor) {
@@ -51,7 +51,7 @@ class InsertDataController extends Controller
                 }
             }
 
-            if ($existrg2) {
+          
 
                 $rg2 = Storage::get('datasensor/realtimegauges2.txt');
 
@@ -72,7 +72,7 @@ class InsertDataController extends Controller
                         }
                     }
                 }
-            }
+            
         }
     }
 }
