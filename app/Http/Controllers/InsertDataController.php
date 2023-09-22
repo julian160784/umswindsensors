@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\SensorLog;
 use App\SensorSetting;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -22,7 +23,9 @@ class InsertDataController extends Controller
         } else {
             $secondSensor = 0;
         }
-        $secondFile = strtotime($strTimeUTC);
+
+        $strTimeWIB = Carbon::parse($strTimeUTC)->addHours(7);
+        $secondFile = strtotime($strTimeWIB);
 
         $existrg2 = Storage::exists('datasensor/realtimegauges2.txt');
 
@@ -39,8 +42,8 @@ class InsertDataController extends Controller
                             'ketinggian' => $s->height,
                             'parameter' => $key,
                             'nilai' => $value,
-                            'created_at' => $strTimeUTC,
-                            'updated_at' => $strTimeUTC
+                            'created_at' => Carbon::parse($strTimeUTC)->addHours(7),
+                            'updated_at' => Carbon::parse($strTimeUTC)->addHours(7)
                         ];
 
                         SensorLog::insert($data);
