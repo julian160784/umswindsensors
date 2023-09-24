@@ -12,11 +12,8 @@ class InsertDataController extends Controller
 {
     public function insert()
     {
-        $content = Storage::get('datasensor/realtimegauges.txt');
+        $content = Storage::get('datasensor/realtimegauges2.txt');
         $json = json_decode($content);
-        $timeUTC = $json->timeUTC;
-        $timeUTC = explode(",", $timeUTC);
-        $strTimeUTC = $timeUTC[0] . "-" . $timeUTC[1] . "-" . $timeUTC[2] . " " . $timeUTC[3] . ":" . $timeUTC[4] . ":" . $timeUTC[5];
         $sensorLog = SensorLog::orderBy('id', 'desc')->first();
         if (isset($sensorLog->created_at)) {
             $secondSensor = strtotime($sensorLog->created_at);
@@ -24,8 +21,7 @@ class InsertDataController extends Controller
             $secondSensor = 0;
         }
 
-        $strTimeWIB = Carbon::parse($strTimeUTC)->addHours(7);
-        $secondFile = strtotime($strTimeWIB);
+        $secondFile = strtotime($json->date);
 
         //$existrg2 = Storage::exists('datasensor/realtimegauges2.txt');
 
@@ -37,13 +33,13 @@ class InsertDataController extends Controller
             // dd ($sensorsetting[0]->parameter);
             foreach ($json as $key => $value) {
                 foreach ($sensorsetting as $s) {
-                    if ($key == $s['parameter']) {
+                    if ($key == $s['parameter'] && $key != 'forecast') {
                         $data = [
                             'ketinggian' => $s->height,
                             'parameter' => $key,
                             'nilai' => $value,
-                            'created_at' => $strTimeWIB,
-                            'updated_at' =>$strTimeWIB
+                            'created_at' => $json->date,
+                            'updated_at' =>$json->date
                         ];
 
                         SensorLog::insert($data);
@@ -53,19 +49,19 @@ class InsertDataController extends Controller
 
           
 
-                $rg2 = Storage::get('datasensor/realtimegauges2.txt');
+                $rg2 = Storage::get('datasensor/realtimegauges.txt');
 
                 $json2 = json_decode(($rg2));
 
                 foreach ($json2 as $key => $value) {
                     foreach ($sensorsetting as $s) {
-                        if ($key == $s['parameter']) {
+                        if ($key == $s['parameter'] && $key != 'forecast') {
                             $data = [
                                 'ketinggian' => $s->height,
                                 'parameter' => $key,
                                 'nilai' => $value,
-                                'created_at' =>$strTimeWIB,
-                                'updated_at' => $strTimeWIB
+                                'created_at' =>$json->date,
+                                'updated_at' => $json->date
                             ];
 
                             SensorLog::insert($data);
