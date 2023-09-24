@@ -72,9 +72,9 @@ export default {
   methods: {
     getData() {
       const parameter = {
-        100: "data5",
-        10: "data14",
-        2: "data16"
+        100: "press100",
+        10: "press10",
+        2: "press"
       };
 
       const params = {
