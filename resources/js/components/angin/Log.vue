@@ -32,7 +32,7 @@ export default {
   components: { Plotly },
   data() {
     return {
-      unit: "mph",
+      unit: "km/h",
       period: "HARI",
       fetchInterval: null,
       data: [

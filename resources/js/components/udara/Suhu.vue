@@ -87,7 +87,7 @@ export default {
   },
   methods: {
     getData() {
-      const data = { 100: "data3", 10: "data12", 2: "data22" };
+      const data = { 100: "temp100", 10: "temp10", 2: "temp" };
       const params = { parameter: data[this.height], unit: this.unit };
 
       axios
