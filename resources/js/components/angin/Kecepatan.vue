@@ -60,7 +60,7 @@ export default {
         80: "wspeed80",
         60: "wspeed60",
         30: "wspeed30",
-        10: "wspeed10"
+        10: "wspeed"
       };
       const params = {
         parameter: data[this.height],

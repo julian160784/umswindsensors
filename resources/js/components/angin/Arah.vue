@@ -42,11 +42,10 @@ export default {
   methods: {
     getData() {
       const data = {
-        100: "data1",
-        70: "data6",
-        40: "data8",
-        10: "data10",
-        2: "data19"
+        80: "bearing80",
+        60: "bearing60",
+        30: "bearing30",
+        10: "bearing",
       };
       const params = {
         parameter: data[this.height]
