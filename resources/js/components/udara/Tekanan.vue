@@ -73,7 +73,7 @@ export default {
     getData() {
       const parameter = {
         100: "press100",
-        10: "press",
+        10: "press10",
         2: "press",
       };
 
