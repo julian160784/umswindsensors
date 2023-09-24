@@ -57,11 +57,10 @@ export default {
       this.chartOptions.series[0].max = this.unit == "mph" ? 200 : 322;
 
       const data = {
-        100: "data2",
-        70: "data7",
-        40: "data9",
-        10: "data11",
-        2: "data18"
+        80: "wspeed80",
+        60: "wspeed60",
+        30: "wspeed30",
+        10: "wspeed10"
       };
       const params = {
         parameter: data[this.height],
