@@ -74,7 +74,7 @@ export default {
       const parameter = {
         100: "press100",
         10: "press10",
-        2: "press"
+        2: "press",
       };
 
       const params = {
