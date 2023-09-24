@@ -17,10 +17,10 @@ export default {
   data() {
     return {
       parameters: {
-        data4: "100m",
-        data13: "10m",
-        data21: "2m (dalam console)",
-        data23: "2m (luar console)"
+        hum100: "100m",
+        hum10: "10m",
+        hum: "2m (dalam console)",
+        inhum: "2m (luar console)"
       },
       fetchInterval: null,
       chartOptions: {
