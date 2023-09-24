@@ -33,7 +33,7 @@
     <div class="d-flex flex-wrap">
       <PrakiraanCuaca class="mr-1 mb-1 flex-fill" />
       <Kelembaban
-        v-for="d in ['data4', 'data13', 'data21', 'data23']"
+        v-for="d in ['hum100', 'hum10', 'hum', 'inhum']"
         :key="d"
         class="mr-1 mb-1 flex-fill"
         :parameter="d"
