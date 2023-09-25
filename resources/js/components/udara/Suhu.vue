@@ -107,7 +107,7 @@ export default {
         });
     },
     getInsideTemperatur() {
-      const params = { parameter: "data17", unit: this.unit };
+      const params = { parameter: "intemp", unit: this.unit };
       axios
         .get("sensorLog/getLastData", { params })
         .then(r => {
