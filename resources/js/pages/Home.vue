@@ -27,13 +27,13 @@
     </div>
 
     <div class="d-flex flex-wrap">
-      <Udara class="mr-1 mb-1 flex-fill" v-for="i in [100, 10, 2]" :key="'udara'+i" :height="i" />
+      <Udara class="mr-1 mb-1 flex-fill" v-for="i in [80, 10, 2]" :key="'udara'+i" :height="i" />
     </div>
 
     <div class="d-flex flex-wrap">
       <PrakiraanCuaca class="mr-1 mb-1 flex-fill" />
       <Kelembaban
-        v-for="d in ['hum100', 'hum10', 'hum', 'inhum']"
+        v-for="d in ['hum80', 'hum10', 'hum', 'inhum']"
         :key="d"
         class="mr-1 mb-1 flex-fill"
         :parameter="d"

@@ -18,7 +18,7 @@ export default {
   props: ["height"],
   data() {
     return {
-      unit: "C",
+      unit: "F",
       fetchInterval: null,
       chartOptions: {
         grid: {
@@ -87,7 +87,7 @@ export default {
   },
   methods: {
     getData() {
-      const data = { 100: "temp100", 10: "temp10", 2: "temp" };
+      const data = { 80: "temp80", 10: "temp10", 2: "temp" };
       const params = { parameter: data[this.height], unit: this.unit };
 
       axios
@@ -118,7 +118,7 @@ export default {
         });
     },
     getDewPoint() {
-      const params = { parameter: "data35", unit: this.unit };
+      const params = { parameter: "dew", unit: this.unit };
       axios
         .get("sensorLog/getLastData", { params })
         .then(r => {
@@ -129,7 +129,7 @@ export default {
         });
     },
     getHeatIndex() {
-      const params = { parameter: "data36", unit: this.unit };
+      const params = { parameter: "heatindex", unit: this.unit };
       axios
         .get("sensorLog/getLastData", { params })
         .then(r => {
@@ -140,7 +140,7 @@ export default {
         });
     },
     getWindChill() {
-      const params = { parameter: "data37", unit: this.unit };
+      const params = { parameter: "wchill", unit: this.unit };
       axios
         .get("sensorLog/getLastData", { params })
         .then(r => {

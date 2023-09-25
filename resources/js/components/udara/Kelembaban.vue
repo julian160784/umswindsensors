@@ -17,7 +17,7 @@ export default {
   data() {
     return {
       parameters: {
-        hum100: "100m",
+        hum80: "80m",
         hum10: "10m",
         hum: "2m (dalam console)",
         inhum: "2m (luar console)"
