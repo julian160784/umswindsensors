@@ -156,8 +156,8 @@ export default {
           "Outside Temp",
           "Wind Chill",
           "Heat Index",
+          "Inside Temp",
           "Dew Point",
-          "Inside Temp"
         ];
 
         this.getDewPoint();
