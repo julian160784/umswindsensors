@@ -4,8 +4,8 @@
 <div class="d-flex flex-row">
     <div class="flex-fill bg">
         <div style="width:700px;margin:200px auto 0;" class="text-white">
-            <h1 style="font-weight:bold">Selamat Datang di Mandalika Wind</h1>
-            <p style="font-size:18px;font-weight:bold">Akses data lingkungan dan suhu di Mandalika dalam satu tempat</p>
+            <h1 style="font-weight:bold">UMS Wind Sensor Kota Sabang</h1>
+            {{-- <p style="font-size:18px;font-weight:bold">Akses data lingkungan dan suhu di Mandalika dalam satu tempat</p> --}}
 
             <br>
 
