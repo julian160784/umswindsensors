@@ -3,11 +3,16 @@
 @section('content')
 <div class="d-flex flex-row">
     <div class="flex-fill bg">
-        <div style="width:700px;margin:200px auto 0;" class="text-white">
-            <h1 style="font-weight:bold">UMS Wind Sensor Kota Sabang</h1>
-            {{-- <p style="font-size:18px;font-weight:bold">Akses data lingkungan dan suhu di Mandalika dalam satu tempat</p> --}}
+        <div style="width:700px;margin:90px auto 0;" class="text-white">
+            <h1 style="font-weight:bold;text-align:center">UMSurabaya Wind Sensor</h1>
+            <h1 style="font-weight:bold;text-align:center">Kota Sabang</h1>
+       {{-- <p style="font-size:32px;font-weight:bold">Kota Sabang</p> --}}
+            {{-- <p style="font-size:18px;font-weight:bold">Akses data angin dan cuaca di Sabang dalam satu tempat</p> --}}
 
             <br>
+	<br>
+	<br>
+	<br><br><br><br><br>
 
             <a href="#" class="btn btn-success"><strong>Pelajari Lebih Lanjut</strong></a>
         </div>

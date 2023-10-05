@@ -1,6 +1,6 @@
 <template>
   <el-card class="text-center">
-    <strong>KECEPATAN ANGIN</strong>
+    <strong>KECEPATAN ANGINz</strong>
     <br />
     {{height}}m
     <br />
@@ -8,8 +8,8 @@
     <v-chart :options="chartOptions" class="echarts"></v-chart>
 
     <el-radio-group v-model="unit" size="mini" @change="getData">
+      <el-radio-button label="kmh"></el-radio-button>
       <el-radio-button label="mph"></el-radio-button>
-      <el-radio-button label="km/h"></el-radio-button>
     </el-radio-group>
   </el-card>
 </template>
@@ -21,7 +21,7 @@ export default {
   props: ["height"],
   data() {
     return {
-      unit: "mph",
+      unit: "kmh",
       fetchInterval: null,
       chartOptions: {
         series: [

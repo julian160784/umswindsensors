@@ -18,7 +18,7 @@ export default {
   props: ["height"],
   data() {
     return {
-      unit: "F",
+      unit: "C",
       fetchInterval: null,
       chartOptions: {
         grid: {

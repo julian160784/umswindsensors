@@ -73,15 +73,24 @@ class SensorLogController extends Controller
         }
 
         if ($request->unit == 'C') {
-            return round(($data->value - 32) * 5 / 9, 1);
+            return round($data->value, 1);
+        }
+	else if ($request->unit == 'F') {
+            return (($data->value * 9/5) + 32);
         }
 
         if ($request->unit == 'km/h') {
-            return round($data->value * 1.60934);
+            return round($data->value, 1);
+        }
+	else if ($request->unit == 'mph') {
+            return round($data->value / 1.609, 1);
         }
 
         if ($request->unit == 'mm') {
             return round($data->nilai * 0.2);
+        }
+	else if ($request->unit == 'inch') {
+            return round($data->nilai * 0.2 / 16390, 1);
         }
 
         return $data->value;
@@ -106,7 +115,7 @@ class SensorLogController extends Controller
                 continue;
             }
 
-            $value[] = $request->unit == 'hPa' ? round($log->value * 33.86389, 2) : round($log->value, 2);
+            $value[] = $request->unit == 'hPa' ? round($log->value, 2) : round($log->value / 33.86389, 2);
         }
 
         return [
@@ -125,12 +134,12 @@ class SensorLogController extends Controller
 
     public function getTerbitTerbenam(Request $request)
     {
-        $data = file_get_contents('https://api.sunrise-sunset.org/json?lat=8.5996&lng=116.1522&formatted=0');
+        $data = file_get_contents('https://api.sunrise-sunset.org/json?lat=5.8926&lng=95.3238&formatted=0');
         $data = json_decode($data);
 
         return [
-            'terbit' => (new Carbon($data->results->sunrise))->addHours(8)->format('H:i:s'),
-            'terbenam' => (new Carbon($data->results->sunset))->addHours(8)->format('H:i:s'),
+            'terbit' => (new Carbon($data->results->sunrise))->addHours(7)->format('H:i:s'),
+            'terbenam' => (new Carbon($data->results->sunset))->addHours(7)->format('H:i:s'),
         ];
     }
 
