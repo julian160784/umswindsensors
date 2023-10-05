@@ -17,7 +17,7 @@ export default {
   props: ["height"],
   data() {
     return {
-      unit: "in3/jam",
+      unit: "mm3/jam",
       fetchInterval: null,
       chartOptions: {
         grid: {

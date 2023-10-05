@@ -9,7 +9,7 @@ try {
 } catch (e) { }
 
 
-import Vue from 'vue'
+import * as Vue from 'vue'
 import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/en'
 import router from './router'
