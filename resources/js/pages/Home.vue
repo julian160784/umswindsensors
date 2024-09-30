@@ -16,7 +16,7 @@
         :key="'arah-angin'+i"
       />
     </div>
-
+<!-- 
     <div class="d-flex flex-wrap">
       <LogAngin
         class="flex-fill mr-1 mb-1"
@@ -25,13 +25,13 @@
         :key="'log-angin'+i"
       />
     </div>
-
+ -->
     <div class="d-flex flex-wrap">
       <Udara class="mr-1 mb-1 flex-fill" v-for="i in [80, 10, 2]" :key="'udara'+i" :height="i" />
     </div>
 
     <div class="d-flex flex-wrap">
-      <PrakiraanCuaca class="mr-1 mb-1 flex-fill" />
+      <!-- <PrakiraanCuaca class="mr-1 mb-1 flex-fill" /> -->
       <Kelembaban
         v-for="d in ['hum80', 'hum10', 'hum', 'inhum']"
         :key="d"
@@ -40,7 +40,7 @@
       />
     </div>
     <div class="d-flex flex-wrap">
-      <CurahHujan class="mr-1 mb-1 flex-fill" />
+      <!-- <CurahHujan class="mr-1 mb-1 flex-fill" /> -->
       <!-- <Penguapan class="mr-1 mb-1 flex-fill" /> -->
       <TerbitTerbenam class="mr-1 mb-1 flex-fill" />
       <!-- <Uv class="mr-1 mb-1 flex-fill" />
@@ -59,15 +59,15 @@
 // import Angin from "../components/angin/Index";
 import KecepatanAngin from "../components/angin/Kecepatan";
 import ArahAngin from "../components/angin/Arah";
-import LogAngin from "../components/angin/Log";
+//import LogAngin from "../components/angin/Log";
 import Udara from "../components/udara/Index";
 import Kelembaban from "../components/udara/Kelembaban";
 import CurahHujan from "../components/udara/CurahHujan";
-import Penguapan from "../components/udara/Penguapan";
-import RadiasiMatahari from "../components/RadiasiMatahari";
-import Uv from "../components/Uv";
+//import Penguapan from "../components/udara/Penguapan";
+//import RadiasiMatahari from "../components/RadiasiMatahari";
+//import Uv from "../components/Uv";
 import HujanSaatIni from "../components/HujanSaatIni";
-import PrakiraanCuaca from "../components/PrakiraanCuaca";
+//import PrakiraanCuaca from "../components/PrakiraanCuaca";
 import TerbitTerbenam from "../components/TerbitTerbenam";
 
 export default {
@@ -76,15 +76,15 @@ export default {
     Udara,
     Kelembaban,
     CurahHujan,
-    Penguapan,
-    RadiasiMatahari,
-    Uv,
+    //Penguapan,
+    //RadiasiMatahari,
+    //Uv,
     HujanSaatIni,
-    PrakiraanCuaca,
+    //PrakiraanCuaca,
     TerbitTerbenam,
     KecepatanAngin,
-    ArahAngin,
-    LogAngin
+    //LogAngin,
+    ArahAngin
   }
 };
 </script>

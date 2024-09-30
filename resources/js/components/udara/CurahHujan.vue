@@ -74,8 +74,8 @@ export default {
         });
     },
     requestData() {
-      this.getData("data30", 0);
-      this.getData("data31", 1);
+      this.getData("rrateTM", 0);
+      this.getData("rrateTM", 1);
     }
   },
   created() {

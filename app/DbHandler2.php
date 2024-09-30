@@ -17,7 +17,7 @@ class DbHandler2
     {
         $num = 0;
         $stringnya ="";
-        $sql = "select * from sensor_logs ORDER BY id DESC LIMIT 36;";
+        $sql = "select * from sensor_logs ORDER BY id DESC LIMIT 94;";
         $result = $this->conn->query($sql);
         if ($result->num_rows > 0) 
         {

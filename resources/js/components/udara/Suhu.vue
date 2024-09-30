@@ -2,8 +2,8 @@
   <el-card>
     <div class="text-right">
       <el-radio-group v-model="unit" size="mini" @change="requestData">
-        <el-radio-button label="F"></el-radio-button>
         <el-radio-button label="C"></el-radio-button>
+        <el-radio-button label="F"></el-radio-button>
       </el-radio-group>
     </div>
     <v-chart :options="chartOptions" class="echarts"></v-chart>

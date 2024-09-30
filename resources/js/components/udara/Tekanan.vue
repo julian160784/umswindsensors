@@ -2,8 +2,8 @@
   <el-card>
     <div class="text-right">
       <el-radio-group v-model="unit" size="mini" @change="getData">
-        <el-radio-button label="inHg"></el-radio-button>
         <el-radio-button label="hPa"></el-radio-button>
+        <el-radio-button label="inHg"></el-radio-button>
       </el-radio-group>
     </div>
     <v-chart :options="chartOptions" class="echarts"></v-chart>

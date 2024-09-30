@@ -14,7 +14,7 @@ import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/en'
 import router from './router'
 import store from './store'
-import App from './App'
+import App from './App.vue'
 
 Vue.use(ElementUI, { locale });
 Vue.component('v-chart', require('vue-echarts/components/ECharts').default)

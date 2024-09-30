@@ -94,7 +94,7 @@ export default {
   },
   created() {
     this.getData();
-    this.fetchInterval = setInterval(this.getData, 60000);
+    this.fetchInterval = setInterval(this.getData, 33300);
   },
   destroyed() {
     clearInterval(this.fetchInterval);

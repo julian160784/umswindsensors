@@ -15,6 +15,8 @@ Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('contentfile', 'InsertDataController@insert');
+Route::get('getws3sec', 'SensorLogController@get_current_wind');
+
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('user', 'UserController')->only(['index', 'show', 'store', 'update', 'destroy']);

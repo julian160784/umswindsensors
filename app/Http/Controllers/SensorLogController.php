@@ -7,6 +7,7 @@ use App\SensorSetting;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class SensorLogController extends Controller
 {
@@ -48,8 +49,8 @@ class SensorLogController extends Controller
                 'ketinggian' => $setting->height,
                 'parameter' => $parameter,
                 'nilai' => $nilai,
-                'created_at' => now(),
-                'updated_at' => now()
+                'created_at' => now()
+                //'updated_at' => now()
             ];
         }
 
@@ -64,6 +65,13 @@ class SensorLogController extends Controller
         }
     }
 
+    public function get_current_wind()
+    {
+        $contents = Storage::get('datasensor/ws3sec.txt');
+        $json = json_decode($contents);
+        return response()->json($json);
+    }
+
     public function getLastData(Request $request)
     {
         $data = SensorLog::where('parameter', $request->parameter)->latest()->first();
@@ -75,25 +83,27 @@ class SensorLogController extends Controller
         if ($request->unit == 'C') {
             return round($data->value, 1);
         }
-	else if ($request->unit == 'F') {
+	    else if ($request->unit == 'F') {
             return (($data->value * 9/5) + 32);
         }
 
         if ($request->unit == 'km/h') {
             return round($data->value, 1);
         }
-	else if ($request->unit == 'mph') {
-            return round($data->value / 1.609, 1);
+	    else if ($request->unit == 'm/s') {
+            return round($data->value / 3.6, 1);
         }
 
-        if ($request->unit == 'mm') {
-            return round($data->nilai * 0.2);
+        if ($request->unit == 'mm') 
+	{
+            return round($data->nilai * 20);
         }
-	else if ($request->unit == 'inch') {
-            return round($data->nilai * 0.2 / 16390, 1);
+	    else if ($request->unit == 'inch') 
+	{
+            return round($data->nilai, 1);
         }
 
-        return $data->value;
+        return $data->value;        
     }
 
     public function getTekanan(Request $request)

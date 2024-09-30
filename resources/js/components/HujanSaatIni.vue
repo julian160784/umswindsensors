@@ -4,8 +4,8 @@
     <v-chart :options="chartOptions" class="echarts"></v-chart>
     <br />
     <el-radio-group v-model="unit" size="mini" @change="requestData">
-      <el-radio-button label="inch"></el-radio-button>
       <el-radio-button label="mm"></el-radio-button>
+      <el-radio-button label="inchi"></el-radio-button>
     </el-radio-group>
   </el-card>
 </template>
@@ -17,7 +17,7 @@ export default {
   props: ["height"],
   data() {
     return {
-      unit: "inchi",
+      unit: "mm",
       fetchInterval: null,
       chartOptions: {
         grid: {
@@ -27,7 +27,7 @@ export default {
         },
         xAxis: {
           type: "category",
-          data: ["Hari Ini", "Badai", "Rata2"]
+          data: ["Hari Ini", "Bulan Ini", "Rata2"]
         },
         yAxis: {
           type: "value",
@@ -77,16 +77,16 @@ export default {
         });
     },
     requestData() {
-      this.getData("data29", 0);
-      this.getData("data27", 1);
-      this.getData("data24", 2);
+      this.getData("rfall", 0);
+      this.getData("rrateTM", 1);
+      this.getData("rrate", 2);
     }
   },
   created() {
     this.requestData();
     this.fetchInterval = setInterval(() => {
       this.requestData();
-    }, 60000);
+    }, 600000);
   },
   destroyed() {
     clearInterval(this.fetchInterval);
